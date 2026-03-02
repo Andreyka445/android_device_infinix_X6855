@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/infinix/FULL-64-ARMV82
+DEVICE_PATH := device/infinix/X6855
 
 # A/B
 AB_OTA_UPDATER := true
@@ -98,4 +98,4 @@ BOARD_AVB_VENDOR_BOOT_ROLLBACK_INDEX_LOCATION := 1
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Inherit the proprietary files
-include vendor/infinix/FULL-64-ARMV82/BoardConfigVendor.mk
+include vendor/infinix/X6855/BoardConfigVendor.mk

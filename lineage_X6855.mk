@@ -7,14 +7,15 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from FULL-64-ARMV82 device
-$(call inherit-product, device/infinix/FULL-64-ARMV82/device.mk)
+# Inherit from Note 50 pro device
+$(call inherit-product, device/infinix/X6855/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_DEVICE := FULL-64-ARMV82
-PRODUCT_NAME := lineage_FULL-64-ARMV82
+PRODUCT_DEVICE := X6855
+PRODUCT_NAME := lineage_X6855
+PRODUCT_MODEL := Infinix Note 50 pro
 PRODUCT_BRAND := Infinix
 PRODUCT_MANUFACTURER := infinix
 
