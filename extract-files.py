@@ -24,7 +24,6 @@ namespace_imports = [
     'hardware/mediatek',
     'hardware/mediatek/libmtkperf_client',
     'hardware/mediatek/libaedv',
-    'hardware/millennium',
 ]
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
@@ -41,6 +40,10 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.mediatek.hardware.apuware.utils@2.0',
         'vendor.mediatek.hardware.videotelephony@1.0'
     ): lib_fixup_vendor_suffix,
+    
+    # Прямые замены через lambda, чтобы избежать TypeError
+    'av-audio-types-aidl-V1-ndk': lambda lib, partition: 'av-audio-types-aidl-ndk',
+    'vendor.mediatek.hardware.audio@7.1': lambda lib, partition: None
 }
 
 blob_fixups: blob_fixups_user_type = {
@@ -136,7 +139,7 @@ module = ExtractUtilsModule(
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
-    add_firmware_proprietary_file=True,
+    add_firmware_proprietary_file=False,
 )
 
 if __name__ == '__main__':
